@@ -2,6 +2,12 @@
 background-color: #2E2E2E;
 }
 
+
+table, th, td {
+    border: 1px solid white;
+    color: white;
+}
+
 .footer {
     clear: both;
     border: 1px groove #aaaaaa;

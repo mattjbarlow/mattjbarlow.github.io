@@ -2,9 +2,9 @@
 <html lang="en">    
 <head>
     <meta charset="utf-8">
-    <title>Graphite</title>
+    <title>Things You Can Do With Emacs</title>
     <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/night.css" id="theme">    
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">    
     <link rel="stylesheet" href="css/matt.css">
     <link rel="stylesheet" href="lib/css/zenburn.css">
     <!--Add support for earlier versions of Internet Explorer -->
@@ -21,739 +21,401 @@
  
         <!-- ALL SLIDES GO HERE -->
         <!-- Each section element contains an individual slide -->
+
 <section>
-  <h2>StatsD and Graphite</h2>
-  <p>Prepared for: Appboy</p>
+  <h2>Things You Can Do With Emacs</h2>
 </section>
- 
-<section>
-  <h2>Table of Contents</h2>
-  <ol>
-    <li>Overview of Graphite and StatsD</li>
-    <li>Use Cases</li>
-    <li>The StatsD UDP Packet</li>
-    <li>The Graphite Web Interface</li>
-    <li>Intro to Graphite Functions</li>
-    <li>Deconstruction</li>
-    <li>Gotchas</li>
-  </ol>
+
+<section data-background="/images/so.png">
+  <h2>Almost Anything</h2>
+	<em>If you are developing a new product, a great way to reach
+	  developers is to create an Emacs package for it. -- The
+	  Internet.</em>
+	<ul>
+	  <li>I work with automation.</li>
+	  <li>I like automating my personal workflows.</li>
+	  <li>Emacs is a great front end for all types of things.</li>
+	</ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>This Talk</h2>
+	<ul>
+	  <li>Is available online at mattjbarlow.github.io.</li>
+	  <li>Goes from basic configuration to writing your own functions.</li>
+	</ul>
 </section>
 
 <section>
-  <h2>Graphite in a nutshell</h2>
-  <img class="stretch" src="./images/graphite.png"></img>
+  <h2>Initializing - Loading Files</h2>
+  <img src="images/directories.png"></img>
+  <ul>
+	<li>Use <code>init.el</code> or <code>.emacs</code> for emacs customizations.</li>
+	<li>Use <code>~/elisp</code> for your own customizations.</li>
+	<li>Use <code>~/git</code> for packages not available through ELPA.</li>
+  </ul>
 </section>
 
-<section>
-  <h2>StatsD</h2>
-  <img class="stretch" src="./images/statsd.png"></img>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Init File</h2>
+  <ul>
+	<li>Emacs Variables</li>
+	<li>Package Variables</li>
+	<li>Hooks</li>
+	<li>Custom Functions</li>	
+  </ul>
 </section>
 
-<section>
-  <h2>Powerful Functions</h2>
+<section data-background="/images/so.png">
+  <h2>Initializing - Emacs Variables</h2>
+  <img src="images/emacs-options.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Package Variables</h2>
+  <img src="images/init-options.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Describe Variables</h2>
+  <img src="images/variable-help.gif"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Key Bindings</h2>
+  <img src="images/key-bindings.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Hooks</h2>
+  <img src="images/hooks.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Functions</h2>
+  <img src="images/functions.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Initializing - Describe Functions</h2>
+  <img src="images/describe-functions.gif"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Init File Development</h2>
+  <ul>
+	<li><code>eval-buffer</code> and <code>eval-region</code> is your friend.</li>
+	<li>Just beware of the global namespace.</li>
+  </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Eval Region</h2>
+  <img src="images/eval-region.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Packages - Three Repos</h2>
+  <ul>
+	<li>GNU ELPA</li>
+	<li>MELPA</li>
+	<li>Marmalade</li>	
+  </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Packages - GNU ELPA</h2>
+  <ul>
+	<li>FSF Sanctioned Emacs Packages</li>
+	<li>The Default Repo</li>
+	<li>Some Signed Packages</li>
+	<li>HTTP Only</li>	
+  </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Packages - MELPA</h2>
+  <ul>
+	<li>Most Popular Repo</li>
+	<li>Packages Maintained by Owners</li>
+	<li>No Signed Packages</li>
+	<li>HTTP Only</li>
+  </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Packages - Marmalade</h2>
+  <ul>
+	<li>Lots of overlap with MELPA</li>
+	<li>Packages Maintained by Anyone</li>
+	<li>No Signed Packages</li>
+	<li>HTTPS Only</li>
+  </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Setting Repos</h2>
+  <img src="images/package-initialize.png"></img>    
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Installing Packages</h2>
+  <img src="images/packages.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Customizing Appearance</h2>
+  <img src="images/appearance.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Backups</h2>
+  <ul>
+	<li>Keep Versions</li>
+	<li>Install Backup Walker</li>
+  </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Backup Versions</h2>
+  <img src="images/backup-versions.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Backup Version Directory</h2>
+  <img src="images/backup-dir.png"></img>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Backup Walker</h2>
+  <img src="images/backup-walker.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Fonts - Describe Char</h2>
+  <img src="images/describe-char.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Fonts - Show Available Fonts</h2>
+  <img src="images/print-fonts.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Fonts - Show Available Fonts</h2>
+  <img src="images/print-fonts.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Fonts - Testing</h2>
+  <img src="images/test-fonts.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Fonts - Initializing</h2>
   <pre>
-http://graphite01.mattjbarlow.com/render?
-from=-12hour&
-until=now&
-width=800&
-height=250&
-target=stats_counts.keystroke&
-lineMode=connected&
-target=drawAsInfinite(events
-  ("Pomodoro")))
+	(set-default-font "Terminus 10")
+    (add-to-list 'default-frame-alist '(font . "Terminus 10"))
+    (setq initial-frame-alist default-frame-alist)
   </pre>
-  <img class="stretch" src="./images/keycounts.png"></img>
-<aside class="notes">
-You can manipulate that data in almost endless ways.
-</aside>
 </section>
 
-<section>
-    <img src="./images/sums.png"></img>
-    <p>Sums and Histograms</p>
-<aside class="notes">
-Know how many times an event happens per second, per hour, per day, etc.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Themes - Initializing</h2>
+  <pre>
+	;; Optional
+	(add-to-list 'custom-theme-load-path "~/git/cyberpunk-theme.el")
+	(load-theme 'cyberpunk t)
+  </pre>
 </section>
 
-<section>
-    <img src="./images/overlay.png"></img>
-    <p>Overlays</p>
-<aside class="notes">
-2nd Y Axis
-</aside>
-</section>
-
-<section data-background="./images/json.png" class="bg">
-  <h2>Easy In and Easy Out</h2>
-  <ol>
-    <li>POST Events</li>
-    <li>Realtime</li>
-    <li>JSON, RAW, and CSV Output</li>
-    <li>JSONP Support</li>
-    <li>Dozens of Community Tools</li>
-  </ol>
-</section>
-
-<section>
-  <h2>StatsD Libraries</h2>
-  <ol>
-    <li>Client Libraries in Every Language</li>
-    <li>No TCP Overhead</li>
-    <li>Nice Telnet Management Console</li>
-  </ol>
-  <p><img src="./images/statsd_management.png"></img></p>
-<aside class="notes">
-Yes, you will see my dirty little secret that I run most of my
-commands as root. These are all throwaway servers and have been
-deleted.
-</aside>
-</section>
-
-<section>
-  <h2>Challenges</h2>
+<section data-background="/images/so.png">
+  <h2>Key Bindings</h2>
   <ul>
-    <li>Steep Learning Curve</li>
-    <li>Lots of dependencies</li>
-    <li>Gotchas Can Bite You Too Late</li>
-    <li>Write Intensive</li>
-    <li>Web Interface Usability and Auth</li>
+	<li>Every key binding is a function.</li>
+	<li>Write your own pneumonic key bindings.</li>
+	<li>View available key bindings.</li>
   </ul>
 </section>
 
-<section>
-  <h2>Metric Types</h2>
-  <p align="left"><strong>Raw Graphite: metric_path value timestamp\n:</strong></p>
-  <pre>foo.bar.baz 42 74857843</pre>
-  <p align="left"><strong>Counters:</strong></p>
-  <pre>StatsClient().incr(stat, count=1, rate=1)</pre>
-  <pre>'stats.' + key + ' ' + valuePerSecond + ' ' + ts + "\n";</pre>
-  <pre>'stats_counts.' + key + ' ' + value + ' ' + ts + "\n";</pre>
-  <p align="left"><strong>Timers</strong></p>
-  <pre>StatsClient().timing(stat, delta, rate=1)</pre>
-  <p align="left"><strong>Gauges</strong></p>
-  <pre>StatsClient().gauge(stat, value, rate=1, delta=False)</pre>
-<aside class="notes">
-Sample rate tells StatsD that your application is only sending data a
-certain percentage of the time. You can do this to avoid overwhelming
-the StatsD server with UDP.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Setting Key Bindings</h2>
+  <img src="images/key-bindings.gif"></img>
 </section>
 
-<section>
-  <h2>Counter Example</h2>
-  <font size="6">
-  <pre><code>
-  c = StatsClient(host=secrets.GRAPHITE_URL, port=8126, prefix=None)
-  c.incr('keystroke', count=1, rate=1)
-  </code></pre>
-  </font>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Key Binding Help</h2>
+  <img src="images/key-help.gif"></img>
 </section>
 
-<section>
-  <h2>Timer Example</h2>
-  <font size="6">
-  <pre><code data-trim>
-def self.query(search_item="pizza")
-  starttime = Time.now
-  result = Twitter.search(search_item, :count => 10, :result_type => "recent").results.first
-  tweettime = ((Time.now - starttime) * 1000).to_i
-  METRICS.timing('tweetsearch.query', tweettime)
-  return result
-end
-  </code></pre>
-  </font>
-
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Key Binding Mode</h2>
+  <img src="images/mode-help.gif"></img>
 </section>
 
-<section>
-  <h2>Gauge Example</h2>
-  <pre><code>
-ps = subprocess.Popen(('ps', 'aux'), stdout=subprocess.PIPE)
-output = subprocess.check_output(('wc', '-l'), stdin=ps.stdout)
-output = re.match(r'(?:^\s*)(\d.*$)', output).group(1)
-
-c = statsd.StatsClient('STATSD_SERVER_IP', 8125)
-c.gauge('{}.processes'.format(args.servername), output)
-  </code></pre>
-<aside class="notes">
-Gauges only flush the last value in StatsD.
-</aside>
-</section>
-
-<section>
-  <h2>Use Cases</h2>
-  <ol>
-    <li>Performance Measurement</li>
-    <li>Team Metrics</li>
-    <li>Alerting</li>
-  </ol>
-</section>
-
-<section>
-  <h2>Performance Data</h2>
-  <p><img src="./images/workload.png"></img></p>
-  <ol>
-    <li>Workload Performance</li>
-    <li>Resource Performance</li>
-    <li>Benchmarking</li>
-  </ol>
-<aside class="notes">
-Overlaying workload (application) and resource (infrastructure)
-measurements is powerful.
-</aside>
-</section>
-
-<section data-background="./images/push.png" class="bg">
-  <h2>Quantified Teams</h2>
-  <ol>
-    <li>Push Events</li>
-    <li>Build Failures</li>
-    <li>Pull Requests</li>
-    <li>Code Coverage</li>
-    <li>C.I. Events</li>
-  </ol>
-</section>
-
-<section>
-  <h2>Alerting</h2>
+<section data-background="/images/so.png">
+  <h2>Navigating Faster</h2>
   <ul>
-    <li><a href="https://github.com/olivierHa/check_graphite">Nagios</a></li>
-    <li><a href="http://imansson.wordpress.com/2012/10/05/graphite-and-sensu/">Sensu</a></li>
-    <li><a href="https://github.com/rackspace-cookbooks/rackspace_statsdGraphite">Cloud Monitoring</a></li>
-    <li>Protip: Use keepLastValue()</li>
+	<li><code>goto-line</code></li>
+	<li><code>C-<INT> Prefix</code></li>
+	<li><code>ace-jump-mode</code></li>
+	<li><code>C-u C-SPC to jump back</code></li>	
   </ul>
-  <p><img src="./images/none.png"></img></p>
-<aside class="notes">
-In the interval between when a new timestamp bucket begins, and StatsD has flushed its data, a None value will appear.
-</aside>
 </section>
 
-<section>
-  <h2>Python Keystroke Counter</h2>
-  <img src="./images/keycounts.png"></img>
-  <p>Keystrokes Per Second</p>
-  <img class="stretch" src="./images/dwmbar.gif"></img>
-  </ul>
-<aside class="notes">
-We all want to beat a number.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Moving Around</h2>
+  <img src="images/moving-around.gif"></img>  
 </section>
 
-<section>
-  <h2><a href="https://github.com/mattjbarlow/keystrokes">Key Counter Code</a></h2>
-<pre><code class="stretch">
-c = StatsClient(host=secrets.GRAPHITE_URL, port=8126, prefix=None)
-
-dev = InputDevice('/dev/input/event0')
-
-for event in dev.read_loop():
-  if event.type == ecodes.EV_KEY:
-    if event.value == 01:
-      c.incr('keystroke', count=1, rate=1)
-</code></pre>
-
-<aside class="notes">
-</aside>
-
-</section>
-
-<section>
-  <h2>Security</h2>
-<ul>
-  <li>Bind Django and Carbon to private IP [0]</li>
-  <li>Most people run StatsD on each application server</li>
-  <li>Set the Graphite Admin password [1]</li>
-  <li>Use <a href="https://www.digitalocean.com/community/articles/how-to-set-up-http-authentication-with-nginx-on-ubuntu-12-10">HTTP Authentication</a> to protect /opt/graphite/webapp</li>
-  <li>Use IPTables to restrict access to carbon and StatsD ports</li>
-  </ul>
-<br /><br />
-<hr />
-<p align="left">[0] update LINE_RECEIVER_INTERFACE in carbon.conf for ports 2003 and 2004</p>
-<p align="left">[1] python manage.py changepassword root</p>
-</section>
-
-<section>
-  <h2>Tracing A UDP Packet</h2>
+<section data-background="/images/so.png">
+  <h2>Macros</h2>
   <ul>
-    <li>echo "testupd:1|c" | nc -w 1 -u SERVER_URL 8125</li>
-    <li>Log into server and telnet localhost 8126</li>
-    <li>Type "counters" to see your testudp counter</li>
-    <li>When it goes away, use whisper-fetch.py to find it in the database</li>
+	<li><code>F3 or C-x (</code> to start</li>
+	<li><code>F4 or C-) (</code> to end and execute</li>
+	<li>Powerful because they work across all Emacs</li>
   </ul>
-<aside class="notes">
-</aside>
 </section>
 
-<section>
-  <h2>Tracing the UDP Packet</h2>
-  <img class="stretch" src="./images/trace_udp.gif"></img>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Macros Demonstration</h2>
+  <img src="images/macros.gif"></img>
 </section>
 
-<section>
-  <h2>The Graphite Dashboard</h2>
+<section data-background="/images/so.png">
+  <h2>Text Registers</h2>
   <ul>
-    <li>The GUI</li>
-    <li>Adding Functions</li>
-    <li>Saving Dashboards</li>
-    <li>Right Click and View Image</li>
-    <li>Manipulate URL</li>
-    <li>Bookmark Graphs</li>
-    <li>Create Your Dashboard Page</li>
+	<li>Pin text to a number.</li>
   </ul>
-<aside class="notes">
-</aside>
 </section>
 
-<section>
-  <h2>The GUI</h2>
-  <p><img src="./images/graphite_fe.png"></img>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Text Registers</h2>
+  <img src="images/text-registers.gif"></img>
 </section>
 
-<section>
-  <h2>Adding Functions</h2>
-  <p><img class="stretch" src="./images/gui_function.gif"></img></p>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Saving Your Dashboard</h2>
-  <p><img class="stretch" src="./images/forecasting.gif"></img></p>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Viewing The Image</h2>
-  <p><img src="./images/url.gif"></img></p>    
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>graphiteurl.com</h2>
-  <p>Programming in the URL Bar :(</p>
-  <p><img src="./images/url_editing.gif"></img></p>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>graphiteurl.com</h2>
-  <p>This web tool makes it easier :)</p>
-  <p><img src="./images/graphiteurl.gif"></img></p>
-<aside class="notes">
-</aside>
-</section>
-
-<section data-background="./images/function.png" class="bg">
-  <h2>Common Graphite Functions</h2>
+<section data-background="/images/so.png">
+  <h2>Window Registers</h2>
   <ul>
-    <li>alias()</li>
-    <li>movingAverage()</li>
-    <li>secondYAxis()</li>
-    <li>timeShift()</li>
-    <li>drawAsInfinite()</li>
-    <li>hitcount()</li>
-    <li>integral() and derivitive()</li>
+	<li>Pin window layout to a number.</li>
   </ul>
-<aside class="notes">
-</aside>
 </section>
 
-<section>
-  <h2>Alias Function</h2>
-  <p><img class="stretch" src="./images/alias.png"></img></p>
-   <pre>&target=alias(stats_counts.keystroke, "Key Strokes")</pre>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Window Registers</h2>
+  <img src="images/window-registers.gif"></img>  
 </section>
 
-<section>
-  <h2>secondYAxis Function</h2>
-  <p><img class="stretch" src="./images/secondyaxis.png"></img></p>
-  <font size="6">
-  <pre>&target=alias(*.agents.graphite-a.cpuUsage, "cpu")&
-target=alias(secondYAxis(*.timers.tweetsearch.query.mean), "tweets")</pre>
-  </font>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>drawAsInfinite</h2>
-  <p><img src="./images/todo.png"></img></p>
-  <font size="6">
-  <pre>&target=stats_counts.keystroke&lineMode=connected&target=drawAsInfinite(events("Pomodoro"))</pre>
-  </font>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Timeshift</h2>
+<section data-background="/images/so.png">
+  <h2>Bookmarks</h2>
   <ul>
-    <li>timeShift() image</li>
+	<li>You can bookmark any position in any file.</li>
+	<li>Bookmarks are nice because, unlike registers, they have names..</li>	
   </ul>
-  <p><img src="./images/timeshift.png"></img></p>
-<pre>&target=color(summarize(stats_counts.keystroke%2C'1hour')%2C'64DD0E')&
-areaMode=stacked&lineMode=staircase&
-target=summarize(timeShift(stats_counts.keystroke%2C'1hour)%2C'1hour')&
-areaMode=stacked&
-lineMode=staircase&
-target=summarize(timeShift(stats_counts.keystroke%2C'1hour')%2C'1hour')&
-areaMode=stacked&
-lineMode=staircase</pre>
-<aside class="notes">
-</aside>
 </section>
 
+<section data-background="/images/so.png">
+  <h2>Bookmarks</h2>
+  <img src="images/bookmarks.gif"></img>  
+</section>
 
-<section data-background="./images/Operations.jpg" class="bg">
-  <h2>Getting More Data into Graphite</h2>
+<section data-background="/images/so.png">
+  <h2>Dired</h2>
   <ul>
-    <li>CollectD</li>
-    <li>Sending Events with Curl</li>
-    <li>Python snippet</li>
-    <li>Ruby snippet</li>
-    <li>Phantomas</li>
-    <li>Rails Nunes gem</li>
+	<li>Emacs File Explorer</li>
   </ul>
-<aside class="notes">
-</aside>
 </section>
 
-<section>
-  <h2>CollectD</h2>
-<p align="left"><strong>apt-get install collectd</p></strong>
-<font size="6">
-  <pre><code>
-#/etc/collectd/collectd.conf      
-LoadPlugin write_graphite
-<Plugin write_graphite>
-        <Node "example">
-        Host "localhost"
-                Port "2003"
-                Protocol "udp"
-                LogSendErrors true
-                Prefix "collectd."
-                StoreRates true
-                AlwaysAppendDS false
-                EscapeCharacter "_"
-        </Node>
-</Plugin>
-   </pre></code>
-</font>
-<aside class="notes">
-103 Plugins: sensors, thermal, postgres, varnish, etc. Most of them read plugins.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - Accessing and Movement</h2>
+  <img src="images/dired-movement.gif"></img>  
 </section>
 
-<section>
-  <h2>CollectD Generates Graphs</h2>
-  <img class="stretch" src="./images/collectd.png"></img>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - Marking Files</h2>
+  <img src="images/dired-marks.gif"></img>  
 </section>
 
-<section>
-  <h2>Curl </h2>
-  <font size="6">
-  <pre><code>
-curl -X POST http://GRAPHITE_URL/events/ \
--d '{"what": "Ansible Jekyll Role", "tags": "Playbook"}''
-  </code></pre>
 
-  <pre><code>
-  drawAsInfinite(events("Playbook"))
-  </code></pre>
-  </font>
-  <p><img class="stretch" src="./images/playbook.png"></img>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - Open Other Window</h2>
+  <img src="images/dired-open.gif"></img>  
 </section>
 
-<section>
-  <h2>Python</h2>
-  <font size="6">
-  <pre><code>
-import argparse
-
-parser = argparse.ArgumentParser(description='Send num processes to StatsD')
-parser.add_argument('servername', metavar='S', type=str,
-help='The server that is generating this process list.')
-
-args = parser.parse_args()
-
-ps = subprocess.Popen(('ps', 'aux'), stdout=subprocess.PIPE)
-output = subprocess.check_output(('wc', '-l'), stdin=ps.stdout)
-
-output = re.match(r'(?:^\s*)(\d.*$)', output).group(1)
-
-c = statsd.StatsClient('STATSD_URL', 8125)
-
-c.gauge('{}.processes'.format(args.servername), output)
-
-print output
-</code></pre>
-</font>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - Byte Compiling</h2>
+  <img src="images/byte-compile.gif"></img>
 </section>
 
-<section>
-  <h2>Ruby</h2>
-<font size="6">
-<pre><code>
-def self.query(search_item="pizza")
-  starttime = Time.now
-  result = Twitter.search(search_item, :count => 10, :result_type => "recent").results.first
-  tweettime = ((Time.now - starttime) * 1000).to_i
-  METRICS.timing('tweetsearch.query', tweettime)
-  return result
-end
-</code></pre>
-</font>
-<aside class="notes">
-METRICS constant set in initializer.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - Diff Two Files</h2>
+  <img src="images/dired-diff.gif"></img>  
 </section>
 
-<section>
-  <h2>Phantomas</h2>
-  <p>114 website metrics</p>
-  <p><img class="stretch" src="./images/phantomas.png"></img></p>
+<section data-background="/images/so.png">
+  <h2>Dired - Customize ls options</h2>
+  <img src="images/dired-ls.gif"></img>  
 </section>
 
-<section>
-  <h2>Events Page In Graphite</h2>
-<p><img src="./images/events.png"></img></p>
-
-<p align="left">Also creates:</p>
-
-<pre>target=stats.gauges.push.mattjbarlow.mattjbarlow-blog</pre>
-<aside class="notes">
-Send both Events and Metrics. You can put a star on the user or repo to get an overlay comparison.
-</aside>
-</section>
-
-<section>
-  <h2>Historical Data</h2>
-<font size="6">
-<pre><code>
-TCP_IP = 'CARBON_IP'
-TCP_PORT = 2003
-github_user = ''
-events_url = 'https://api.github.com/users/' + github_user + '/events'
-
-r = requests.get(events_url)
-
-for i in r.json():
-    if i['type'] == 'PushEvent':
-        git_time = i['created_at']
-        dt = time.strptime(git_time, "%Y-%m-%dT%H:%M:%SZ")
-        timestamp = time.mktime(dt)
-        
-        s = socket.socket()
-        s.connect((TCP_IP, TCP_PORT))
-        message = "github.{}.{} 1 {}\n".format(i['actor']['login'],i['repo']['name'], \
-                                               int(timestamp))
-        print message
-        s.sendall(message)
-        s.close()
-</code></pre>
-</font>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Nunes Gem</h2>
-  <p>Subscribes to Rails instrumentation events and sends them to StatsD.</p>
-  <p><img class="stretch" src="./images/nunes.png"></img></p>
-</section>
-
-<section data-background="./images/deconstruction.jpg" class="bg">
-  <h2>Deconstruction</h2>
+<section data-background="/images/so.png">
+  <h2>Dired - Finding Files</h2>
   <ul>
-    <li>Graphite</li>
-    <li>StatsD</li>
-    <li>Gotchas</li>
+	<li><code>find-name-dired</code></li>
+	<li><code>find-grep-dired</code></li>
+	<li><code>% g</code></li>
   </ul>
-<aside class="notes">
-</aside>
 </section>
 
-<section>
-  <h2>RRD Database Structure</h2>
-  <img src="./images/rrd.png"></img>
-  <p>Circular Buffer means Fixed Size</p>
-<aside class="notes">
-You can put all kinds of data in here.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - Finding Files</h2>
+  <img src="images/dired-grep.gif"></img>  
 </section>
 
-<section>
-  <h2>Graphite Directory Overview</h2>
-  <img class="stretch" src="./images/graphite_directory.png"></img>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>storage-schemas.conf</h2>
-<p>Lives in /opt/graphite/conf</p>
-<pre><code>
-[stats]
-priority = 110
-pattern = ^stats\..*
-retentions = 10s:6h,1m:7d,10m:1y
-</code></pre>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>storage-aggregation.conf</h2>
-<p>Lives in /opt/graphite/conf</p>
-<pre><code>
-[default_average]
-pattern = .*
-xFilesFactor = 0.5
-aggregationMethod = average
-</code></pre>
-<aside class="notes">
-name: Arbitrary unique name for the rule pattern: Regex pattern to
-match against the metric name
-xFilesFactor: Ratio of valid data points
-required for aggregation to the next retention to occur
-aggregationMethod: function to apply to data points for aggregation
-</aside>
-</section>
-
-<section>
-  <h2>The Whisper Databases</h2>
-<p>In /opt/graphite/storage/whisper</p>
-<pre><code>
-drwxr-xr-x 3 root root 4096 May  3 14:17 carbon
-drwxr-xr-x 4 root root 4096 May  3 14:18 stats
-drwxr-xr-x 3 root root 4096 May  3 14:18 stats_counts
-drwxr-xr-x 2 root root 4096 May  3 14:18 statsd
-</code></pre>
-<font size="6">
-<pre><code class="stretch">
-graphite/storage/whisper/carbon/agents/graphited01-a/metricsReceived.wsp
-</code></pre>
-<pre><code>
-http://graphite.example.com/render?target=carbon.agents.graphite01-a.metricsReceived
-</pre></code>
-</font>
-<p><img src="./images/metrics_collected.png"</img></p>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Graphite Startup</h2>
-  <p align="left">Start carbon:</p>
-  <pre><code>/opt/graphite/bin/carbon-cache.py start --logdir=/var/log/carbon</code></pre>
-
-  <p align="left">Start django:</p>
-  <font size="6">
-  <pre><code>python /opt/graphite/webapp/graphite/manage.py runserver 192.168.0.1:80</code></pre>
-  </font>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Important StatsD Files</h2>
-  <img class="stretch" src="./images/statsd_files.png"></img>
-<aside class="notes">
-</aside>
-</section>
-
-<section>
-  <h2>Starting StatsD</h2>
-  <font size="6">
-  <pre><code>node /opt/statsd/stats.js /opt/statsd/localConfig.js 2>&1 >> /var/log/statsd.log</code></pre>
-  </font>
-<aside class="notes">
-</aside>
-</section>
-
-
-<section data-background="./images/bullseye.png" class="bg">
-  <h2>Gotchas</h2>
+<section data-background="/images/so.png">
+  <h2>Magit</h2>
   <ul>
-    <li>Retention Rate and Flush Interval</li>
-    <li>Storage Aggregation and Downsampling</li>
-    <li>UDP vs. TCP Port</li>
-    <li>Metrics Names</li>
-    <li>Two Entries for Counters</li>
+	<li>One of the best emacs package interfaces.</li>
+	<li>status</li>
+	<li>branch</li>
+	<li>diff</li>
+	<li>stage</li>
+	<li>commit</li>
+	<li>push</li>
   </ul>
-<aside class="notes">
-</aside>
 </section>
 
-<section>
-  <h2>Retention Rate / Flush Interval</h2>
-   <p align="left">The smallest retention rate in Graphite must match the Flush
-    Interval in StatsD</p>
-   <p><strong>storage-schemas.conf</strong></p>
-   <p><img src="./images/localConfig.png"></img></p>
-   <p><strong>localConfig.js</strong></p>
-   <p><img src="./images/config.png"></img></p>
-<aside class="notes">
-Carbon will only write the stats once per retention period.
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - status</h2>
+  <img src="images/dired-grep.gif"></img>  
 </section>
 
-<section>
-  <h2>Downsampling</h2>
-  <ul>
-    <li>Graphite averages downsamples by default</li>
-    <li>You should use averages for gauges and timers, but sums for
-    counters</li>
-  </ul>
-  <p><strong>storage-aggregation.conf</strong></p>
-   <p><img src="./images/aggregation.png"></img></p>
-  
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - branch</h2>
+  <img src="images/dired-grep.gif"></img>  
 </section>
 
-<section>
-  <h2>Send To The Right Port</h2>
-  <ul>
-    <li>StatsD has a separate TCP and UDP Listening Process</li>
-    <li>Don't forget the 'u' flag in netstat -utlnp</li>
-  </ul>
-<aside class="notes">
-</aside>
+<section data-background="/images/so.png">
+  <h2>Dired - diff</h2>
+  <img src="images/dired-grep.gif"></img>  
 </section>
-<section>
-  <h2>Two Entries for One Counter</h2>
-  <ul>
-    <li>stats.countername normalizes the flush interval</li>
-    <li>stats_counts.countername is the total count received within the
-    flush interval</li>
-    <li>Set ^stats_counts\..* to aggregationMethod = Sum</li>
-  </ul>
-<aside class="notes">
-If you send seven increments within 10s, stats will send 0.7, and stats_counts will send 7.
-</aside>
+
+<section data-background="/images/so.png">
+  <h2>Dired - stage</h2>
+  <img src="images/dired-grep.gif"></img>  
 </section>
-            </div>
+
+<section data-background="/images/so.png">
+  <h2>Dired - commit</h2>
+  <img src="images/dired-grep.gif"></img>  
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Dired - push</h2>
+  <img src="images/dired-grep.gif"></img>  
+</section>
+
+	</div>
     </div>
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.min.js"></script>
