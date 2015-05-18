@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+<section>
+  <h2>Things You Can Do With Emacs</h2>
+	<p><em>If you are developing a new product, a great way to reach
+	  developers is to create an Emacs package for it. -- The
+	  Internet.</em></p>
+</section>
+
+<section >
+  <h3>About Me</h3>
+	<ul>
+	  <li>I work with automation.</li>
+	  <li>I like automating my personal workflows.</li>
+	  <li>Emacs is a great front end for all types of things.</li>
+	</ul>
+</section>
+
+<section >
+  <h3>This Talk</h3>
+	<ul>
+	  <li>Is available online at <a href="http://mattjbarlow.github.io/emacs">mattjbarlow.github.io/emacs</a>.</li>
+	  <li>Goes from basic configuration to writing your own functions.</li>
+	</ul>
+</section>
+
+<section>
+  <h3>Emacs Startup</h3>
+  <img src="images/directories.png"></img>
+  <ul>
+	<li>Use <code>init.el</code> or <code>.emacs</code> for emacs customizations.</li>
+	<li>Use <code>~/elisp</code> for your own customizations.</li>
+	<li>Use <code>~/git</code> for packages not available through ELPA.</li>
+  </ul>
+</section>
+
+
+<section >
+  <h3>Common Init Changes</h3>
+  <ul>
+	<li>Emacs Variables</li>
+	<li>Package Variables</li>
+	<li>Hooks</li>
+	<li>Custom Functions</li>	
+  </ul>
+</section>
+
+<section >
+  <h3>Initializing Emacs Variables</h3>
+  <img src="images/emacs-options.png"></img>
+</section>
+
+<section >
+  <h3>Initializing Package Variables</h3>
+  <img src="images/init-options.png"></img>
+</section>
+
+<section >
+  <h3>Describing Variables</h3>
+  <code>C-h v</code>  
+  <img src="images/variable-help.gif"></img>
+</section>
+
+<section >
+  <h3>Setting Key Bindings</h3>
+  <img src="images/key-bindings.png"></img>
+</section>
+
+<section >
+  <h3>Setting Hooks</h3>
+  <img src="images/hooks.png"></img>
+</section>
+
+<section >
+  <h3>Writing Custom Functions</h3>
+  <img src="images/functions.png"></img>
+</section>
+
+<section >
+  <h3>Describing Functions</h3>
+  <code>C-h f</code>  
+  <img src="images/describe-function.gif"></img>
+</section>
+
+<section >
+  <h3>Beginning Elisp</h3>
+  <ul>
+	<li><code>eval-buffer</code> and <code>eval-region</code> is your friend.</li>
+	<li>Just beware of the global namespace.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Eval Region</h3>
+  <code>M-x eval-region</code>  
+  <img src="images/eval-region.gif"></img>  
+</section>
+
+<section >
+  <h3>Emacs Packages</h3>
+  <ul>
+	<li>GNU ELPA</li>
+	<li>MELPA</li>
+	<li>Marmalade</li>	
+  </ul>
+</section>
+
+<section >
+  <h3>GNU ELPA</h3>
+  <ul>
+	<li>FSF Sanctioned Emacs Packages</li>
+	<li>The Default Repo</li>
+	<li>Some Signed Packages</li>
+	<li>HTTP Only</li>	
+  </ul>
+</section>
+
+<section >
+  <h3>MELPA</h3>
+  <ul>
+	<li>Most Popular Repo</li>
+	<li>Packages Maintained by Owners</li>
+	<li>No Signed Packages</li>
+	<li>HTTP Only</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Marmalade</h3>
+  <ul>
+	<li>Lots of overlap with MELPA</li>
+	<li>Packages Maintained by Anyone</li>
+	<li>No Signed Packages</li>
+	<li>HTTPS Only</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Setting Repos</h3>
+  <img src="images/package-initialize.png"></img>    
+</section>
+
+<section >
+  <h3>Installing Packages</h3>
+  <code>M-x package-list-packages</code>
+  <img src="images/packages.gif"></img>  
+</section>
+
+<section >
+  <h3>Customizing Appearance</h3>
+  <img src="images/appearance.gif"></img>  
+</section>
+
+<section >
+  <h3>Fonts - Describe Char</h3>
+  <code>M-x describe-char</code>
+  <img src="images/describe-char.gif"></img>  
+</section>
+
+<section >
+  <h3>Fonts - Show Available Fonts</h3>
+  <code>M-: (print (font-family-list))</code>
+  <img src="images/print-fonts.gif"></img>  
+</section>
+
+<section >
+  <h3>Fonts - Testing</h3>
+  <code>M-x set-frame-font</code>
+  <img src="images/test-fonts.gif"></img>  
+</section>
+
+<section >
+  <h3>Initializing Fonts</h3>
+  <pre>
+    (set-default-font "Terminus 10")
+    (add-to-list 'default-frame-alist '(font . "Terminus 10"))
+    (setq initial-frame-alist default-frame-alist)
+  </pre>
+</section>
+
+<section >
+  <h3>Backups</h3>
+  <ul>
+	<li>Keep Versions</li>
+	<li>Install Backup Walker</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Backup Versions</h3>
+  <img src="images/backup-versions.png"></img>
+</section>
+
+<section >
+  <h3>Backup Version Directory</h3>
+  <img src="images/backup-dir.png"></img>
+</section>
+
+<section >
+  <h3>Backup Walker</h3>
+  <code>M-x backup-walker</code>
+  <img src="images/backup-walker.gif"></img>  
+</section>
+
+<section >
+  <h3>Themes - Initializing</h3>
+  <code>M-x load-theme</code>
+  <pre>
+	;; Optional
+	(add-to-list 'custom-theme-load-path "~/git/cyberpunk-theme.el")
+
+	;; Required
+	(load-theme 'cyberpunk t)
+  </pre>
+</section>
+
+<section >
+  <h3>Key Bindings</h3>
+  <ul>
+	<li>Every key binding is a function.</li>
+	<li>Write your own pneumonic key bindings.</li>
+	<li>View available key bindings.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Key Binding Help</h3>
+  <code>C-h k</code>
+  <img src="images/key-help.gif"></img>
+</section>
+
+<section >
+  <h3>Setting Key Bindings</h3>
+  <img src="images/key-bindings.gif"></img>
+</section>
+
+<section >
+  <h3>Mode Key Bindings</h3>
+  <code>C-h m</code>
+  <img src="images/mode-help.gif"></img>
+</section>
+
+<section >
+  <h3>Navigating Faster</h3>
+  <ul>
+	<li><code>goto-line</code></li>
+	<li><code>C-<INT> Prefix</code></li>
+	<li><code>ace-jump-mode</code></li>
+	<li><code>C-u C-SPC to jump back</code></li>	
+  </ul>
+</section>
+
+<section >
+  <code>C-1-0-p</code><br />
+  <code>M-g g</code>  
+  <h3>Moving Around</h3>
+  <img src="images/moving-around.gif"></img>  
+</section>
+
+<section >
+  <h3>Macros</h3>
+  <ul>
+	<li><code>F3 or C-x (</code> to start</li>
+	<li><code>F4 or C-x )</code> to end and execute</li>
+	<li>Powerful because they work across all Emacs</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Macros Demonstration</h3>
+  <code>F3 or C-x (</code> to start<br />
+  <code>F4 or C-x )</code> to end and execute
+  <img src="images/macros.gif"></img>
+</section>
+
+<section >
+  <h3>Text Registers</h3>
+  <ul>
+	<li>Pin text to a number.</li>
+  </ul>
+  <img src="images/registers.png"></img>
+</section>
+
+<section >
+  <h3>Text Registers</h3>
+  Save: <code>C-x r s 1</code><br />
+  Insert: <code>C-x r i 1</code>
+  <img src="images/text-registers.gif"></img>
+</section>
+
+<section >
+  <h3>Window Registers</h3>
+  <ul>
+	<li>Pin window layout to a number.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Window Registers</h3>
+  Save: <code>C-x r w 1</code><br />
+  Restore: <code>C-x r j 1</code>
+  <img src="images/window-registers.gif"></img>  
+</section>
+
+<section >
+  <h3>Bookmarks</h3>
+  <ul>
+	<li>You can bookmark any position in any file.</li>
+	<li>Bookmarks are nice because, unlike registers, they have names..</li>	
+  </ul>
+</section>
+
+<section >
+  <h3>Bookmarks</h3>
+  Set: <code>C-x r m</code><br />
+  Jump: <code>C-x r b</code>  
+  <img src="images/bookmarks.gif"></img>  
+</section>
+
+<section >
+  <h3>Dired</h3>
+  <ul>
+	<li>Emacs File Explorer</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Dired - Accessing and Movement</h3>
+  Move up and down: <code>p</code> <code>n</code><br />
+  Move up directory: <code>^</code>
+  <img src="images/dired-movement.gif"></img>  
+</section>
+
+<section >
+  <h3>Dired - Marking Files</h3>
+  Mark files: <code>m</code><br />
+  Move (rename) files: <code>R</code><br />
+  <img src="images/dired-marks.gif"></img>  
+</section>
+
+
+<section >
+  <h3>Dired - Open Other Window</h3>
+  <code>C-o</code><br />
+  <img src="images/dired-open.gif"></img>  
+</section>
+
+<section >
+  <h3>Dired - Byte Compiling</h3>
+  Mark files: <code>m</code><br />
+  Byte compile: <code>B</code><br />
+  <img src="images/byte-compile.gif"></img>
+</section>
+
+<section >
+  <h3>Dired - Diff Two Files</h3>
+  <code>=</code><br />
+  <img src="images/dired-diff.gif"></img>  
+</section>
+
+<section >
+  <h3>Dired - Customize ls options</h3>
+  <code>C-u s</code><br />
+  <img src="images/dired-ls.gif"></img>  
+</section>
+
+<section >
+  <h3>Dired - Finding Files</h3>
+  <ul>
+	<li><code>find-name-dired</code></li>
+	<li><code>find-grep-dired</code></li>
+	<li><code>% g</code></li>
+  </ul>
+</section>
+
+<section >
+  <h3>Dired - Finding Files</h3>
+  <code>% g</code><br />
+  <img src="images/dired-grep.gif"></img>  
+</section>
+
+<section >
+  <h3>Magit</h3>
+  <p><em>If you are using Emacs you should check out magit which is one of the best if not the best git tools out there. — elpix</em></p>
+  <p><em>Magit is the only git client where I can be faster than on the command line. great stuff. — tenpn</em></p>
+</section>
+
+<section >
+  <h3>Status</h3>
+  <code>M-x magit-status</code><br />
+  <img src="images/magit-status.gif"></img>  
+</section>
+
+<section >
+  <h3>Branching</h3>
+  Create branch: <code>b</code> <code>c</code><br />
+  <img src="images/magit-branch.gif"></img>  
+</section>
+
+<section >
+  <h3>Diff with Master</h3>
+  <code>d</code> <code>Return</code><br />
+  <img src="images/magit-diff.gif"></img>  
+</section>
+
+<section >
+  <h3>Stage changes</h3>
+  <code>s</code><br />
+  <img src="images/magit-stage.gif"></img>  
+</section>
+
+<section >
+  <h3>Commit</h3>
+  Bring up commit window: <code>c</code> <code>c</code><br />
+  Commit message: <code>C-c C-c</code><br />
+  <img src="images/magit-commit.gif"></img>  
+</section>
+
+<section >
+  <h3>Push to remote branch</h3>
+  <code>P</code> <code>P</code><br />
+  <img src="images/magit-push.gif"></img>  
+</section>
+
+<section >
+  <h3>Getting help</h3>
+  <code>h</code><br />
+  <img src="images/magit-help.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode</h3>
+  <ul>
+	<li>Supreme Information System</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Org-Mode - Outlining</h3>
+  <code>C-x C-f FILENAME.org</code><br />  
+  <img src="images/orgmode-outline.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode - Narrowing</h3>
+  Narrow: <code>C-x n s</code><br />
+  Widen: <code>C-x n w</code><br />
+  <img src="images/orgmode-narrowing.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode - Tables</h3>
+  <code>|- TAB</code><br />
+  <img src="images/orgmode-tables.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode - Links</h3>
+  Store link: <code>C-c l</code><br />
+  Make link: <code>C-c C-l</code><br />  
+  <img src="images/orgmode-links.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode - Code Snippets</h3>
+  <code>#+BEGIN_SRC go</code><br />
+  <code>#+END_SRC go</code><br />  
+  <img src="images/orgmode-snippets.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode - Exporting</h3>
+  Export as html and open: <code>C-c C-e h o</code><br />
+  <img src="images/orgmode-export.gif"></img>  
+</section>
+
+<section >
+  <h3>Org-Mode - Capturing</h3>
+  <code>C-c c</code><br />
+  <img src="images/orgmode-capture.gif"></img>  
+</section>
+
+<section >
+  <h3>Emacs Tab Completion</h3>
+  <ul>
+	<li>ido-mode</li>
+	<li>Icicles</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Emacs Tab Completion</h3>
+  <img src="images/tabs-none.gif"></img>
+</section>
+
+<section >
+  <h3>Emacs Tab Ido</h3>
+  <img src="images/tabs-ido.gif"></img>
+</section>
+
+<section >
+  <h3>Emacs Tab Ido Uniquify</h3>
+  <img src="images/tabs-uniquify.gif"></img>
+</section>
+
+<section >
+  <h3>Icicles Progressive Narrow</h3>
+  <code>Shift-Space</code><br />
+  <img src="images/tabs-progressive.gif"></img>
+</section>
+
+<section >
+  <h3>Icicles Regex Completion</h3>
+  <code>Shift-TAB</code><br />
+  <img src="images/tabs-regex.gif"></img>
+</section>
+
+<section >
+  <h3>Icicles Preview Files</h3>
+  <code>Ctrl-Return</code><br />
+  <img src="images/tabs-preview.gif"></img>
+</section>
+
+<section >
+  <h3>Supercharge modifiers</h3>
+  <p><pre>xcape -e 'Alt_R=Control_L|period;Shift_R=Alt_L|slash'</pre></p>
+  <ul>
+	<li>Modifier keys can perform an action when pressed alone.</li>
+	<li>Use xcape for Linux or Karabiner for Mac.</li>
+	<li>Enables super fast access to common functions.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Snippets and Templates</h3>
+  <img src="images/yasnippet.gif"></img>
+</section>
+
+<section >
+  <h3>Yasnippet Startup</h3>
+  <pre>
+	(yas-reload-all)
+	(add-hook 'org-mode-hook #'yas-minor-mode)
+  </pre>
+</section>
+
+<section >
+  <h3>Custom Templates</h3>
+  <img src="images/custom-templates.gif"></img>
+</section>
+
+<section >
+  <h3>Just Enough Elisp</h3>
+  <img src="images/elisp-functions.png"></img>
+</section>
+
+<section >
+  <h3>Just Enough Elisp</h3>
+  <ul>
+	<li>Functions in emacs are composed of other functions.</li>
+	<li>Almost all of Emacs is powered by Elisp, except for a few C
+	  primitives.</li>
+	<li>Symbols can be both a function and variable at the same time.</li>
+	<li>How they are evaluated depends upon their position.</li>
+	<li>Use <code>C-h f</code> and <code>C-h v</code> liberally.
+  </ul>
+</section>
+
+<section >
+  <h3>Quoting Symbols</h3>
+  <img src="images/elisp-quotes.png"></img>
+</section>
+
+<section >
+  <h3>Quoting Demonstration</h3>
+  <img src="images/elisp-quoting-demo.gif"></img>
+</section>
+
+<section >
+  <h3>Just Enough Elisp</h3>
+  <ul>
+	<li>Elisp evaluates from the inside out and left to right.</li>
+	<li>Functions return values and perform side-effects.</li>
+	<li>Type checking is done with functions like <code>number-or-marker-p</code>.</li>
+	<li>Use <code>let</code> for local variables within your functions.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Arithmetic and Type Checking</h3>
+  <img src="images/elisp-addition.gif"></img>
+</section>
+
+<section >
+  <h3>Equality</h3>
+  <img src="images/elisp-equality.gif"></img>
+</section>
+
+<section >
+  <h3>Control Flow</h3>
+  <img src="images/elisp-control.gif"></img>
+</section>
+
+<section >
+  <h3>progn</h3>
+    <ul>
+	<li>Causes one or more side-effects to occur, and returns a
+	value</li>
+  </ul>
+  <img src="images/elisp-progn.png"></img>
+</section>
+
+<section >
+  <h3>Vectors</h3>
+  <img src="images/elisp-vectors.gif"></img>
+</section>
+
+<section >
+  <h3>Defining Your Own Functions</h3>
+  <ul>
+	<li>Every action you perform in Emacs is a function.</li>
+	<li>All functions you will write are comprised of other
+	  functions.</li>
+	<li>Use the *scratch* buffer and <code>C-j</code> to iterate.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Greeting Function</h3>
+  <img src="images/elisp-greeting.gif"></img>
+</section>
+
+<section >
+  <h3>gorun Function</h3>
+  <img src="images/gorun-function.gif"></img>
+</section>
+
+<section >
+  <h3>One Last Snippet</h3>
+  <ul>
+	<li>Emacs is single process and single threaded.</li>
+	<li>You can, however, spawn new processes and watch them.</li>
+	<li>These watchers are called sentinels.</li>	
+  </ul>
+</section>
+
+<section >
+  <h3>Processes and Sentinels</h3>
+  <img src="images/sentinel.png"></img>
+</section>
+
+<section >
+  <h3>The End</h3>
+  <ul>
+	<li>Thank you!</li>
+	<li>Check out more resources on <a href="http://mattjbarlow.github.io/emacs">mattjbarlow.github.io/emacs</a></li>
+	<li>There are command references and key bindings for every
+	slide.</li>
+  </ul>
+</section>
+
+	</div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
