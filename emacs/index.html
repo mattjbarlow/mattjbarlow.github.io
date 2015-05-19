@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Things You Can Do With Emacs</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -42,9 +42,7 @@
 			<div class="slides">
 <section>
   <h2>Things You Can Do With Emacs</h2>
-	<p><em>If you are developing a new product, a great way to reach
-	  developers is to create an Emacs package for it. -- The
-	  Internet.</em></p>
+  <p><em>Emacs has an entire programming language inside it that can be used to write arbitrarily powerful editor functions.</em> -- ESR</p>
 </section>
 
 <section >
@@ -61,6 +59,7 @@
 	<ul>
 	  <li>Is available online at <a href="http://mattjbarlow.github.io/emacs">mattjbarlow.github.io/emacs</a>.</li>
 	  <li>Goes from basic configuration to writing your own functions.</li>
+	  <li>Never used Emacs before? <code>C-h t</code> will bring up a tutorial.</li>
 	</ul>
 </section>
 
@@ -69,14 +68,12 @@
   <img src="images/directories.png"></img>
   <ul>
 	<li>Use <code>init.el</code> or <code>.emacs</code> for emacs customizations.</li>
-	<li>Use <code>~/elisp</code> for your own customizations.</li>
-	<li>Use <code>~/git</code> for packages not available through ELPA.</li>
   </ul>
 </section>
 
 
 <section >
-  <h3>Common Init Changes</h3>
+  <h3>Common Emacs Customizations</h3>
   <ul>
 	<li>Emacs Variables</li>
 	<li>Package Variables</li>
@@ -103,7 +100,28 @@
 
 <section >
   <h3>Setting Key Bindings</h3>
-  <img src="images/key-bindings.png"></img>
+  <ul>
+	<li>Every key binding is a function.</li>
+	<li>Write your own pneumonic key bindings.</li>
+	<li>View available key bindings.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>Key Binding Help</h3>
+  <code>C-h k</code>
+  <img src="images/key-help.gif"></img>
+</section>
+
+<section >
+  <h3>Setting Key Bindings</h3>
+  <img src="images/key-bindings.gif"></img>
+</section>
+
+<section >
+  <h3>Mode Key Bindings</h3>
+  <code>C-h m</code>
+  <img src="images/mode-help.gif"></img>
 </section>
 
 <section >
@@ -120,6 +138,24 @@
   <h3>Describing Functions</h3>
   <code>C-h f</code>  
   <img src="images/describe-function.gif"></img>
+</section>
+
+<section >
+  <h3>Fonts - Describe Char</h3>
+  <code>M-x describe-char</code>
+  <img src="images/describe-char.gif"></img>  
+</section>
+
+<section >
+  <h3>Fonts - Show Available Fonts</h3>
+  <code>M-: (print (font-family-list))</code>
+  <img src="images/print-fonts.gif"></img>  
+</section>
+
+<section >
+  <h3>Fonts - Testing</h3>
+  <code>M-x set-frame-font</code>
+  <img src="images/test-fonts.gif"></img>  
 </section>
 
 <section >
@@ -192,33 +228,6 @@
 </section>
 
 <section >
-  <h3>Fonts - Describe Char</h3>
-  <code>M-x describe-char</code>
-  <img src="images/describe-char.gif"></img>  
-</section>
-
-<section >
-  <h3>Fonts - Show Available Fonts</h3>
-  <code>M-: (print (font-family-list))</code>
-  <img src="images/print-fonts.gif"></img>  
-</section>
-
-<section >
-  <h3>Fonts - Testing</h3>
-  <code>M-x set-frame-font</code>
-  <img src="images/test-fonts.gif"></img>  
-</section>
-
-<section >
-  <h3>Initializing Fonts</h3>
-  <pre>
-    (set-default-font "Terminus 10")
-    (add-to-list 'default-frame-alist '(font . "Terminus 10"))
-    (setq initial-frame-alist default-frame-alist)
-  </pre>
-</section>
-
-<section >
   <h3>Backups</h3>
   <ul>
 	<li>Keep Versions</li>
@@ -252,32 +261,6 @@
 	;; Required
 	(load-theme 'cyberpunk t)
   </pre>
-</section>
-
-<section >
-  <h3>Key Bindings</h3>
-  <ul>
-	<li>Every key binding is a function.</li>
-	<li>Write your own pneumonic key bindings.</li>
-	<li>View available key bindings.</li>
-  </ul>
-</section>
-
-<section >
-  <h3>Key Binding Help</h3>
-  <code>C-h k</code>
-  <img src="images/key-help.gif"></img>
-</section>
-
-<section >
-  <h3>Setting Key Bindings</h3>
-  <img src="images/key-bindings.gif"></img>
-</section>
-
-<section >
-  <h3>Mode Key Bindings</h3>
-  <code>C-h m</code>
-  <img src="images/mode-help.gif"></img>
 </section>
 
 <section >
@@ -577,14 +560,6 @@
 </section>
 
 <section >
-  <h3>Yasnippet Startup</h3>
-  <pre>
-	(yas-reload-all)
-	(add-hook 'org-mode-hook #'yas-minor-mode)
-  </pre>
-</section>
-
-<section >
   <h3>Custom Templates</h3>
   <img src="images/custom-templates.gif"></img>
 </section>
@@ -595,18 +570,6 @@
 </section>
 
 <section >
-  <h3>Just Enough Elisp</h3>
-  <ul>
-	<li>Functions in emacs are composed of other functions.</li>
-	<li>Almost all of Emacs is powered by Elisp, except for a few C
-	  primitives.</li>
-	<li>Symbols can be both a function and variable at the same time.</li>
-	<li>How they are evaluated depends upon their position.</li>
-	<li>Use <code>C-h f</code> and <code>C-h v</code> liberally.
-  </ul>
-</section>
-
-<section >
   <h3>Quoting Symbols</h3>
   <img src="images/elisp-quotes.png"></img>
 </section>
@@ -614,16 +577,6 @@
 <section >
   <h3>Quoting Demonstration</h3>
   <img src="images/elisp-quoting-demo.gif"></img>
-</section>
-
-<section >
-  <h3>Just Enough Elisp</h3>
-  <ul>
-	<li>Elisp evaluates from the inside out and left to right.</li>
-	<li>Functions return values and perform side-effects.</li>
-	<li>Type checking is done with functions like <code>number-or-marker-p</code>.</li>
-	<li>Use <code>let</code> for local variables within your functions.</li>
-  </ul>
 </section>
 
 <section >
@@ -639,20 +592,6 @@
 <section >
   <h3>Control Flow</h3>
   <img src="images/elisp-control.gif"></img>
-</section>
-
-<section >
-  <h3>progn</h3>
-    <ul>
-	<li>Causes one or more side-effects to occur, and returns a
-	value</li>
-  </ul>
-  <img src="images/elisp-progn.png"></img>
-</section>
-
-<section >
-  <h3>Vectors</h3>
-  <img src="images/elisp-vectors.gif"></img>
 </section>
 
 <section >
@@ -697,6 +636,63 @@
 	<li>There are command references and key bindings for every
 	slide.</li>
   </ul>
+</section>
+
+<section data-background="/images/so.png">
+  <h2>Appendix</h2>
+</section>
+
+<section >
+  <h3>Making Font Changes Permanent</h3>
+  <pre>
+    (set-default-font "Terminus 10")
+    (add-to-list 'default-frame-alist '(font . "Terminus 10"))
+    (setq initial-frame-alist default-frame-alist)
+  </pre>
+</section>
+
+<section >
+  <h3>Yasnippet Startup</h3>
+  <pre>
+	(yas-reload-all)
+	(add-hook 'org-mode-hook #'yas-minor-mode)
+  </pre>
+</section>
+
+<section >
+  <h3>Just Enough Elisp</h3>
+  <ul>
+	<li>Functions in emacs are composed of other functions.</li>
+	<li>Almost all of Emacs is powered by Elisp, except for a few C
+	  primitives.</li>
+	<li>Symbols can be both a function and variable at the same time.</li>
+	<li>How they are evaluated depends upon their position.</li>
+	<li>Use <code>C-h f</code> and <code>C-h v</code> liberally.
+  </ul>
+</section>
+
+<section >
+  <h3>Just Enough Elisp</h3>
+  <ul>
+	<li>Elisp evaluates from the inside out and left to right.</li>
+	<li>Functions return values and perform side-effects.</li>
+	<li>Type checking is done with functions like <code>number-or-marker-p</code>.</li>
+	<li>Use <code>let</code> for local variables within your functions.</li>
+  </ul>
+</section>
+
+<section >
+  <h3>progn</h3>
+    <ul>
+	<li>Causes one or more side-effects to occur, and returns a
+	value</li>
+  </ul>
+  <img src="images/elisp-progn.png"></img>
+</section>
+
+<section >
+  <h3>Vectors</h3>
+  <img src="images/elisp-vectors.gif"></img>
 </section>
 
 	</div>
